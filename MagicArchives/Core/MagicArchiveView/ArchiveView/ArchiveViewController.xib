@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="25098" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light" />
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="25073" />
+        <capability name="Named colors" minToolsVersion="9.0" />
+        <capability name="Safe area layout guides" minToolsVersion="9.0" />
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArchiveViewController" customModule="MagicArchives" customModuleProvider="target">
+            <connections>
+                <outlet property="headingLabel" destination="archive-heading" id="outlet-headingLabel" />
+                <outlet property="archiveCollectionView" destination="0OU-7a-dhW" id="archive-table-outlet" />
+                <outlet property="searchBar" destination="NzY-ZI-LcI" id="outlet-searchBar" />
+                <outlet property="subtitleLabel" destination="archive-subtitle" id="outlet-subtitleLabel" />
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt" />
+                <outlet property="countLabel" destination="archive-count" id="archive-count-outlet" />
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder" />
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+            <subviews>
+                <collectionView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="0OU-7a-dhW">
+                    <rect key="frame" x="0.0" y="258" width="393" height="560" />
+                    <color key="backgroundColor" name="MinistryBackground" />
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="archive-initial-layout">
+                        <size key="itemSize" width="50" height="50" />
+                        <size key="headerReferenceSize" width="0.0" height="0.0" />
+                        <size key="footerReferenceSize" width="0.0" height="0.0" />
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0" />
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-ZI-LcI">
+                    <rect key="frame" x="12" y="154" width="369" height="56" />
+                    <textInputTraits key="textInputTraits" />
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="archive-search-delegate" />
+                    </connections>
+                </searchBar>
+                <label opaque="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="archive-heading">
+                    <rect key="frame" x="20" y="71" width="353" height="40.666666666666657" />
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34" />
+                    <color key="textColor" name="MinistryForest" />
+                    <nil key="highlightedColor" />
+                </label>
+                <label opaque="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="archive-subtitle">
+                    <rect key="frame" x="20" y="123.6666666667" width="353" height="14.333333333333343" />
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1" />
+                    <color key="textColor" name="MinistryGold" />
+                </label>
+                <label opaque="NO" contentMode="scaleToFill" text="Label" numberOfLines="0" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="archive-count">
+                    <rect key="frame" x="20" y="222" width="353" height="20" />
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead" />
+                    <color key="textColor" name="MinistrySecondary" />
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3" />
+            <color key="backgroundColor" name="MinistryBackground" />
+            <constraints>
+                <constraint firstItem="archive-heading" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="heading-top" />
+                <constraint firstItem="archive-heading" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="archive-heading-leading" />
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="archive-heading" secondAttribute="trailing" constant="20" id="archive-heading-trailing" />
+                <constraint firstItem="archive-subtitle" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="archive-subtitle-leading" />
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="archive-subtitle" secondAttribute="trailing" constant="20" id="archive-subtitle-trailing" />
+                <constraint firstItem="NzY-ZI-LcI" firstAttribute="height" constant="56" id="search-height" />
+                <constraint firstItem="NzY-ZI-LcI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="search-leading" />
+                <constraint firstItem="NzY-ZI-LcI" firstAttribute="top" secondItem="archive-subtitle" secondAttribute="bottom" constant="16" id="search-top" />
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NzY-ZI-LcI" secondAttribute="trailing" constant="12" id="search-trailing" />
+                <constraint firstItem="archive-subtitle" firstAttribute="top" secondItem="archive-heading" secondAttribute="bottom" constant="12" id="subtitle-top" />
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="table-bottom" />
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="table-leading" />
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="top" secondItem="archive-count" secondAttribute="bottom" constant="16" id="table-top" />
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="table-trailing" />
+                <constraint firstItem="archive-count" firstAttribute="top" secondItem="NzY-ZI-LcI" secondAttribute="bottom" constant="16" id="archive-count-top" />
+                <constraint firstItem="archive-count" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="archive-count-leading" />
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="archive-count" secondAttribute="trailing" constant="20" id="archive-count-trailing" />
+            </constraints>
+            <point key="canvasLocation" x="104.58015267175573" y="100.70422535211269" />
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="MinistryBackground">
+            <color red="0.97647100687026978" green="0.96470600366592407" blue="0.93333297967910767" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistryForest">
+            <color red="0.12548999488353729" green="0.28235301375389099" blue="0.22745099663734436" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistryGold">
+            <color red="0.58039200305938721" green="0.44313699007034302" blue="0.22745099663734436" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistrySeparator">
+            <color red="0.87058800458908081" green="0.84705901145935059" blue="0.78823500871658325" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistrySecondary">
+            <color red="0.4549" green="0.4902" blue="0.4235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+    </resources>
+</document>
