@@ -1,22 +1,114 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="25098" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="25073"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordsViewController" customModule="MagicArchives" customModuleProvider="target">
             <connections>
+                <outlet property="headingLabel" destination="records-heading" id="outlet-headingLabel"/>
+                <outlet property="houseButtonsStackView" destination="records-filters-stack" id="outlet-houseButtonsStackView"/>
+                <outlet property="recordsTableView" destination="0OU-7a-dhW" id="records-table-outlet"/>
+                <outlet property="searchBar" destination="NzY-ZI-LcI" id="outlet-searchBar"/>
+                <outlet property="subtitleLabel" destination="records-subtitle" id="outlet-subtitleLabel"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="132" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0OU-7a-dhW">
+                    <rect key="frame" x="0.0" y="341" width="393" height="443"/>
+                    <color key="backgroundColor" name="MinistryBackground"/>
+                    <color key="separatorColor" name="MinistrySeparator"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="records-data-source"/>
+                    </connections>
+                </tableView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-ZI-LcI">
+                    <rect key="frame" x="12" y="213" width="369" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="records-search-delegate"/>
+                    </connections>
+                </searchBar>
+                <label opaque="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="records-heading">
+                    <rect key="frame" x="20" y="130" width="353" height="40.666666666666657"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                    <color key="textColor" name="MinistryForest"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="records-subtitle">
+                    <rect key="frame" x="20" y="182.66666666666666" width="353" height="14.333333333333343"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                    <color key="textColor" name="MinistryGold"/>
+                </label>
+                <scrollView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="records-filters-scroll">
+                    <rect key="frame" x="0.0" y="281" width="393" height="44"/>
+                    <subviews>
+                        <stackView contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="records-filters-stack">
+                            <rect key="frame" x="20" y="0.0" width="654" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="654" placeholder="YES" id="o0O-9K-a1a"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="records-filters-stack" firstAttribute="bottom" secondItem="records-filter-content" secondAttribute="bottom" id="filters-bottom"/>
+                        <constraint firstItem="records-filters-stack" firstAttribute="height" secondItem="records-filter-frame" secondAttribute="height" id="filters-height"/>
+                        <constraint firstItem="records-filters-stack" firstAttribute="leading" secondItem="records-filter-content" secondAttribute="leading" constant="20" id="filters-leading"/>
+                        <constraint firstItem="records-filters-stack" firstAttribute="top" secondItem="records-filter-content" secondAttribute="top" id="filters-top"/>
+                        <constraint firstItem="records-filter-content" firstAttribute="trailing" secondItem="records-filters-stack" secondAttribute="trailing" constant="20" id="filters-trailing"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="records-filter-content"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="records-filter-frame"/>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="MinistryBackground"/>
+            <constraints>
+                <constraint firstItem="records-heading" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="heading-top"/>
+                <constraint firstItem="records-heading" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="records-heading-leading"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="records-heading" secondAttribute="trailing" constant="20" id="records-heading-trailing"/>
+                <constraint firstItem="records-subtitle" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="records-subtitle-leading"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="records-subtitle" secondAttribute="trailing" constant="20" id="records-subtitle-trailing"/>
+                <constraint firstItem="records-filters-scroll" firstAttribute="height" constant="44" id="scroll-height"/>
+                <constraint firstItem="records-filters-scroll" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="scroll-leading"/>
+                <constraint firstItem="records-filters-scroll" firstAttribute="top" secondItem="NzY-ZI-LcI" secondAttribute="bottom" constant="12" id="scroll-top"/>
+                <constraint firstItem="records-filters-scroll" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="scroll-trailing"/>
+                <constraint firstItem="NzY-ZI-LcI" firstAttribute="height" constant="56" id="search-height"/>
+                <constraint firstItem="NzY-ZI-LcI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="search-leading"/>
+                <constraint firstItem="NzY-ZI-LcI" firstAttribute="top" secondItem="records-subtitle" secondAttribute="bottom" constant="16" id="search-top"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NzY-ZI-LcI" secondAttribute="trailing" constant="12" id="search-trailing"/>
+                <constraint firstItem="records-subtitle" firstAttribute="top" secondItem="records-heading" secondAttribute="bottom" constant="12" id="subtitle-top"/>
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="table-bottom"/>
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="table-leading"/>
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="top" secondItem="records-filters-scroll" secondAttribute="bottom" constant="16" id="table-top"/>
+                <constraint firstItem="0OU-7a-dhW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="table-trailing"/>
+            </constraints>
+            <point key="canvasLocation" x="104.58015267175573" y="100.70422535211269"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="MinistryBackground">
+            <color red="0.97647100687026978" green="0.96470600366592407" blue="0.93333297967910767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MinistryForest">
+            <color red="0.12548999488353729" green="0.28235301375389099" blue="0.22745099663734436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MinistryGold">
+            <color red="0.58039200305938721" green="0.44313699007034302" blue="0.22745099663734436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MinistrySeparator">
+            <color red="0.87058800458908081" green="0.84705901145935059" blue="0.78823500871658325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

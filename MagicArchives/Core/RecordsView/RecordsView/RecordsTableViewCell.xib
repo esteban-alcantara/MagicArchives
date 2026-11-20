@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="25098" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light" />
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="25073" />
+        <capability name="Named colors" minToolsVersion="9.0" />
+        <capability name="Safe area layout guides" minToolsVersion="9.0" />
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" />
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder" />
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="KGk-i7-Jjw" customClass="RecordsTableViewCell" customModule="MagicArchives" customModuleProvider="target" reuseIdentifier="RecordsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="464" height="115" />
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES" />
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="464" height="115" />
+                <autoresizingMask key="autoresizingMask" />
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yQs-zg-PFo">
+                        <rect key="frame" x="5" y="2" width="85" height="110" />
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="D9u-bj-n0X" />
+                            <constraint firstAttribute="height" constant="84" id="PVI-yr-sO1" />
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="12" />
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="records-text-stack">
+                        <rect key="frame" x="106" y="16" width="338" height="100" />
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6R-Kb-i6w" numberOfLines="0" adjustsFontForContentSizeCategory="YES">
+                                <rect key="frame" x="98" y="10" width="42" height="21" />
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline" />
+                                <color key="textColor" name="MinistryForest" />
+                                <nil key="highlightedColor" />
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLj-Mc-zdw" numberOfLines="0" adjustsFontForContentSizeCategory="YES">
+                                <rect key="frame" x="100" y="41" width="31" height="15" />
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead" />
+                                <color key="textColor" name="MinistrySecondary" />
+                                <nil key="highlightedColor" />
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTm-PD-JVb" numberOfLines="0" adjustsFontForContentSizeCategory="YES">
+                                <rect key="frame" x="100" y="66" width="31" height="15" />
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead" />
+                                <color key="textColor" name="MinistryGold" />
+                                <nil key="highlightedColor" />
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8V-nA-esY" numberOfLines="0" adjustsFontForContentSizeCategory="YES">
+                                <rect key="frame" x="100" y="91" width="31" height="15" />
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1" />
+                                <color key="textColor" name="MinistryDanger" />
+                                <nil key="highlightedColor" />
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint id="records-image-leading" firstItem="yQs-zg-PFo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" />
+                    <constraint id="records-image-top" firstItem="yQs-zg-PFo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" />
+                    <constraint id="records-image-bottom" firstItem="H2p-sc-9uM" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yQs-zg-PFo" secondAttribute="bottom" constant="16" />
+                    <constraint id="records-stack-leading" firstItem="records-text-stack" firstAttribute="leading" secondItem="yQs-zg-PFo" secondAttribute="trailing" constant="16" />
+                    <constraint id="records-stack-trailing" firstItem="H2p-sc-9uM" firstAttribute="trailing" secondItem="records-text-stack" secondAttribute="trailing" constant="20" />
+                    <constraint id="records-stack-top" firstItem="records-text-stack" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" />
+                    <constraint id="records-stack-bottom" firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="records-text-stack" secondAttribute="bottom" constant="16" />
+                </constraints>
+                <color key="backgroundColor" name="MinistryBackground" />
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar" />
+            <point key="canvasLocation" x="216.79389312977099" y="125.70422535211269" />
+            <connections>
+                <outlet property="characterImageView" destination="yQs-zg-PFo" id="records-characterImageView" />
+                <outlet property="nameLabel" destination="T6R-Kb-i6w" id="records-nameLabel" />
+                <outlet property="occupationLabel" destination="MLj-Mc-zdw" id="records-occupationLabel" />
+                <outlet property="houseLabel" destination="vTm-PD-JVb" id="records-houseLabel" />
+                <outlet property="rewardLabel" destination="L8V-nA-esY" id="records-rewardLabel" />
+            </connections>
+            <color key="backgroundColor" name="MinistryBackground" />
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="MinistryDanger">
+            <color red="0.64313697814941406" green="0.30980399250984192" blue="0.25097998976707458" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistryForest">
+            <color red="0.12548999488353729" green="0.28235301375389099" blue="0.22745099663734436" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistryGold">
+            <color red="0.58039200305938721" green="0.44313699007034302" blue="0.22745099663734436" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistrySecondary">
+            <color red="0.42745101451873779" green="0.47843098640441895" blue="0.40784299373626709" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+        <namedColor name="MinistryBackground">
+            <color red="0.976" green="0.965" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </namedColor>
+    </resources>
+</document>
