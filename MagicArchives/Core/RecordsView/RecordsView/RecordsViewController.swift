@@ -28,6 +28,9 @@ final class RecordsViewController: UIViewController {
         headingLabel.text = "Expedientes"
         subtitleLabel.text = "MINISTERIO DE MAGIA"
         searchBar.placeholder = "Buscar nombre u ocupación"
+        navigationItem.backButtonTitle = "Expedientes"
+        recordsTableView.delegate = self
+        recordsTableView.allowsSelection = true
         setUpHouseButtons()
         setUpKeyboardDismissal()
         recordsTableView.register(
@@ -231,6 +234,14 @@ extension RecordsViewController: UITableViewDataSource {
 
         cell.configure(with: filteredRecords[indexPath.row])
         return cell
+    }
+}
+
+extension RecordsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailViewController = CharacterDetailViewController(record: filteredRecords[indexPath.row])
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

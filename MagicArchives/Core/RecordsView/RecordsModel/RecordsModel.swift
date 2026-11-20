@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Record: Decodable {
+struct Record: Codable {
     let id: String
     let name: String
     let imageName: String

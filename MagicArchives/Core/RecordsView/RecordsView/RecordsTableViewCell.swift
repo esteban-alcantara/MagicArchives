@@ -18,6 +18,7 @@ class RecordsTableViewCell: UITableViewCell {
     @IBOutlet weak var rewardLabel: UILabel!
 
     func configure(with record: Record) {
+        accessoryType = .disclosureIndicator
         characterImageView.image = UIImage(named: record.imageName)
         nameLabel.text = record.name
         occupationLabel.text = record.occupation
